@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Adapta
+        psr4_prefix: Adapta
+        src_path: app
