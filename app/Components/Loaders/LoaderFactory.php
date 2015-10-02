@@ -6,7 +6,7 @@ use Adapta\Exceptions\LoaderNotExistException;
 
 class LoaderFactory {
 	
-	private $loaders = [
+	private static $loaders = [
 		'csv'   => CsvLoader::class,
 		'json'  => JsonLoader::class,
 		'yaml'  => YamlLoader::class,
@@ -14,11 +14,11 @@ class LoaderFactory {
 		'tab'   => TabLoader::class,
 	];
 	
-	public function make($loader)
+	public static function make($loader)
 	{
-		if ($this->hasLoader($loader))
+		if (self::hasLoader($loader))
 		{
-			$class = array_get($this->loaders, $loader);
+			$class = array_get(self::$loaders, $loader);
 			
 			return new $class;
 		}
@@ -26,9 +26,9 @@ class LoaderFactory {
 		throw new LoaderNotExistException($loader);
 	}
 	
-	public function hasLoader($loader)
+	public static function hasLoader($loader)
 	{
-		return array_key_exists($loader, $this->loaders);
+		return array_key_exists($loader, self::$loaders);
 	}
 	
 }
