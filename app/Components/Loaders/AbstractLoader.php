@@ -9,8 +9,6 @@ use Ddeboer\DataImport\Reader\CountableReader as ReaderInterface;
 
 abstract class AbstractLoader implements LoaderInterface {
 
-	protected $class;
-
 	protected $file;
 	
 	protected $reader;
@@ -18,8 +16,6 @@ abstract class AbstractLoader implements LoaderInterface {
 	protected $data;
 
 	protected $options = [];
-
-	public function load() { }
 
 	public function setFile($file) {
 

@@ -38,9 +38,23 @@ class TestLoader extends Command
      */
     public function handle()
     {
-        $loader = LoaderFactory::make($this->argument('loader'), $this->argument('file'));
+        $loader = LoaderFactory::make($this->argument('loader'));
+
+        $loader->setFile($this->argument('file'));
+
+        // $loader->setOption('delimiter', ';');
+        $loader->setOption('header_row', 1);
+        $loader->setOption('headers', 'number');
+        $loader->setOption('strict', false);
+
+        $loader->load();
+
+        foreach ($loader->getReader() as $row)
+        {
+            var_dump($row);
+        }
         
-        dd($loader);
+        // dd($loader);
         
     }
 }

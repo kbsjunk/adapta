@@ -1,0 +1,158 @@
+{
+    "airlines": [
+        {
+            "fs": "LCI",
+            "iata": "LF",
+            "icao": "LCI",
+            "name": "Lao Central Airlines ",
+            "active": true,
+            "category": "I"
+        },
+        {
+            "fs": "TGU",
+            "iata": "5U",
+            "icao": "TGU",
+            "name": "TAG",
+            "active": true,
+            "category": "I"
+        },
+        {
+            "fs": "BT",
+            "iata": "BT",
+            "icao": "BTI",
+            "name": "Air Baltic",
+            "active": true,
+            "category": "I"
+        },
+        {
+            "fs": "9J",
+            "iata": "9J",
+            "icao": "DAN",
+            "name": "Dana Airlines",
+            "active": true,
+            "category": "I"
+        },
+        {
+            "fs": "GR*",
+            "iata": "GR",
+            "name": "Gemini Air Cargo",
+            "active": false,
+            "category": "C"
+        },
+        {
+            "fs": "2O",
+            "iata": "2O",
+            "icao": "RNE",
+            "name": "Island Air Service",
+            "active": true,
+            "category": "I"
+        },
+        {
+            "fs": "IW*",
+            "iata": "IW",
+            "icao": "OAN",
+            "name": "Aerospace One",
+            "active": true,
+            "category": "D"
+        },
+        {
+            "fs": "DP*",
+            "iata": "DP",
+            "name": "Pobeda",
+            "active": true,
+            "category": "I"
+        },
+        {
+            "fs": "NPT",
+            "icao": "NPT",
+            "name": "Atlantic Airlines",
+            "active": true,
+            "category": "D"
+        },
+        {
+            "fs": "7W1",
+            "iata": "7W",
+            "name": "Aviation Assistance",
+            "active": false,
+            "category": "A"
+        },
+        {
+            "fs": "C8",
+            "iata": "C8",
+            "icao": "ICV",
+            "name": "Cargolux Italia",
+            "active": true,
+            "category": "C"
+        },
+        {
+            "fs": "GM",
+            "iata": "GM",
+            "icao": "SVK",
+            "name": "Air Slovakia",
+            "active": false,
+            "category": "A"
+        },
+        {
+            "fs": "FK",
+            "iata": "FK",
+            "icao": "WTA",
+            "name": "Africa West",
+            "active": true,
+            "category": "C"
+        },
+        {
+            "fs": "DH*",
+            "iata": "DH",
+            "name": "Norwegian Air Norway",
+            "active": true,
+            "category": "J"
+        },
+        {
+            "fs": "8K",
+            "iata": "8K",
+            "icao": "EVS",
+            "name": "EVAS Air Charters",
+            "active": true,
+            "category": "A"
+        },
+        {
+            "fs": "FP*",
+            "iata": "FP",
+            "name": "S.A.C.",
+            "active": true,
+            "category": "A"
+        },
+        {
+            "fs": "W8",
+            "iata": "W8",
+            "icao": "CJT",
+            "name": "Cargojet",
+            "active": true,
+            "category": "C"
+        },
+        {
+            "fs": "KLS",
+            "iata": "KD",
+            "icao": "KLS",
+            "name": "Kal Star Aviation",
+            "active": true,
+            "category": "I"
+        },
+        {
+            "fs": "JBW",
+            "iata": "3J",
+            "icao": "JBW",
+            "name": "Jubba Airways (Kenya)",
+            "active": true,
+            "category": "I"
+        },
+        {
+            "fs": "MKG",
+            "iata": "P8",
+            "icao": "MKG",
+            "name": "Air Mekong (duplicate)",
+            "active": false,
+            "category": "I"
+        }
+    ]
+}
