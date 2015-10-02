@@ -14,13 +14,13 @@ class LoaderFactory {
 		'tab'   => TabLoader::class,
 	];
 	
-	public static function make($loader)
+	public static function make($loader, $content = null)
 	{
 		if (self::hasLoader($loader))
 		{
 			$class = array_get(self::$loaders, $loader);
 			
-			return new $class;
+			return new $class($content);
 		}
 		
 		throw new LoaderNotExistException($loader);

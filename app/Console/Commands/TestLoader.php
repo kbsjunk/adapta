@@ -38,8 +38,7 @@ class TestLoader extends Command
      */
     public function handle()
     {
-        $loader = LoaderFactory::make($this->argument('loader'));
-        $loader->setFile($this->argument('file'));
+        $loader = LoaderFactory::make($this->argument('loader'), $this->argument('file'));
         
         dd($loader);
         

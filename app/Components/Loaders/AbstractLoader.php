@@ -4,13 +4,13 @@ namespace Adapta\Components\Loaders;
 
 use SplFileObject;
 use File;
-use Adapta\Components\Exceptions\FileNotFoundException;
+use Adapta\Exceptions\FileNotFoundException;
 use Ddeboer\DataImport\Reader\CountableReader as ReaderInterface;
 
 abstract class AbstractLoader implements LoaderInterface {
 
 	protected $class;
-	
+
 	protected $file;
 	
 	protected $reader;
@@ -32,7 +32,7 @@ abstract class AbstractLoader implements LoaderInterface {
 			return true;
 		}
 
-		throw new FileNotExistException($file);
+		throw new FileNotFoundException($file);
 
 	}
 
@@ -41,7 +41,7 @@ abstract class AbstractLoader implements LoaderInterface {
 		return $this->file;
 	}
 
-	public function setReader(ReaderInterface $reader)
+	public function setReader($reader)
 	{
 		$this->reader = $reader;
 	}
