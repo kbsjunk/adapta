@@ -1,0 +1,77 @@
+---
+data:
+  - key
+  - two
+  - three
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+
+authorize: C:/Users/User/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: C:/Users/User/Sites
+      to: /home/vagrant/sites
+
+sites:
+
+    - map: sites.loc
+      to: /home/vagrant/sites/
+
+    - map: langarts.loc
+      to: /home/vagrant/sites/langarts/wordpress
+
+    - map: kitbs.loc
+      to: /home/vagrant/sites/kitbs/public
+
+    - map: fbevent.loc
+      to: /home/vagrant/sites/fbevent
+
+    - map: deliciousindex.loc
+      to: /home/vagrant/sites/deliciousindex/public
+
+    - map: lowrez.loc
+      to: /home/vagrant/sites/lowrez/platform/public
+
+    - map: old.lowrez.loc
+      to: /home/vagrant/sites/lowrez/old/_prod/wordpress
+
+    - map: sandbox.lowrez.loc
+      to: /home/vagrant/sites/lowrez/sandbox
+
+    - map: rmit.loc
+      to: /home/vagrant/sites/rmit
+
+    - map: datamigration.rmit.loc
+      to: /home/vagrant/sites/rmit/datamigration/public
+
+    - map: cellar.loc
+      to: /home/vagrant/sites/cellar/public
+
+    - map: metroid.loc
+      to: /home/vagrant/sites/metroid/public
+
+    - map: eurovote.loc
+      to: /home/vagrant/sites/eurovote/public
+
+    - map: maptiles.loc
+      to: /home/vagrant/sites/maptiles
+
+    - map: kbspodcast.loc
+      to: /home/vagrant/sites/kbspodcast/public
+
+    - map: eventist.loc
+      to: /home/vagrant/sites/eventist/laravel/public
+
+    - map: configmonkey.loc
+      to: /home/vagrant/sites/configmonkey/public
+
+    - map: mini.eurovote.loc
+      to: /home/vagrant/sites/mini_eurovote/public
+
+variables:
+    - key: APP_ENV
+      value: local

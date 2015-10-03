@@ -2,8 +2,7 @@
 
 namespace Adapta\Components\Loaders;
 
-interface LoaderInterface {
-	
-	public function load();
-	
+interface LoaderInterface
+{
+    public function load();
 }

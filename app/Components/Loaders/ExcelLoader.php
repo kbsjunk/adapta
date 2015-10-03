@@ -2,34 +2,33 @@
 
 namespace Adapta\Components\Loaders;
 
-use Ddeboer\DataImport\Reader\CsvReader;
+use Ddeboer\DataImport\Reader\ExcelReader;
 
-class CsvLoader extends AbstractFileLoader implements LoaderInterface
+class ExcelLoader extends AbstractFileLoader implements LoaderInterface
 {
     protected $options = [
-        'delimiter' => ',',
-        'enclosure' => '"',
-        'escape' => '\\',
-        'strict' => true,
+        'read_only' => true,
+        'worksheet' => null,
+        // 'strict'     => true,
         'headers' => null, // null, [], number, merge, increment
         'header_row' => 0, // false, 0, 1, 2...
     ];
 
     public function load()
     {
-        $reader = new CsvReader(
-            $this->getFile(),
-            $this->getOption('delimiter'),
-            $this->getOption('enclosure'),
-            $this->getOption('escape')
-            );
-
         $headers = $this->getOption('headers');
         $headerRow = $this->getOption('header_row');
 
+        $reader = new ExcelReader(
+            $this->getFile(),
+            $headerRow,
+            $this->getOption('worksheet'),
+            $this->getOption('read_only')
+            );
+
         if (false !== $headerRow) {
-            $duplicateHeaders = $headers == 'merge' ? CsvReader::DUPLICATE_HEADERS_MERGE : CsvReader::DUPLICATE_HEADERS_INCREMENT;
-            $reader->setHeaderRowNumber($headerRow, $duplicateHeaders);
+            // $duplicateHeaders = $headers == 'merge' ? ExcelReader::DUPLICATE_HEADERS_MERGE : CsvReader::DUPLICATE_HEADERS_INCREMENT;
+            $reader->setHeaderRowNumber($headerRow);//, $duplicateHeaders);
         }
 
         if (is_array($headers)) {
@@ -44,7 +43,7 @@ class CsvLoader extends AbstractFileLoader implements LoaderInterface
             $reader->setColumnHeaders($headers);
         }
 
-        $reader->setStrict($this->getOption('strict'));
+        // $reader->setStrict($this->getOption('strict'));
 
         return $this->setReader($reader);
     }
