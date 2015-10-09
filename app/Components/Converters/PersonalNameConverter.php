@@ -6,7 +6,9 @@ class PersonalNameConverter
 {
     public function __invoke($input)
     {
-        return $this->getPartsFromFullName($input);
+        $output = $this->getPartsFromFullName($input);
+        $output['original'] = $input;
+        return $output;
     }
 
     private function getPartsFromFullName($full_name)
@@ -14,9 +16,7 @@ class PersonalNameConverter
         $fname = '';
         $lname = '';
         $initials = '';
-        $name_parts = [
-            'original' => $full_name,
-        ];
+        $name_parts = [];
 
         $full_name = trim($full_name);
 
@@ -94,7 +94,7 @@ class PersonalNameConverter
             $name['first_name'] = trim($fname);
 // $name['initials'] = trim($initials);
             $name['last_name'] = trim($lname);
-// $name['suffix'] = $suffix;
+$name['suffix'] = $suffix;
         } else {
             $name = ['title' => null, 'first_name' => null, 'last_name' => null];
         }
@@ -123,6 +123,9 @@ class PersonalNameConverter
             break;
             case 'ms':
             $word = 'Ms';
+            break;
+            case 'mx':
+            $word = 'Mx';
             break;
             case 'dr':
             case 'doctor':
@@ -156,8 +159,20 @@ class PersonalNameConverter
             case 'professor':
             $word = 'Prof';
             break;
+            case 'dame':
+            $word = 'Dame';
+            break;
+            case 'sir':
+            $word = 'Sir';
+            break;
+            case 'lord':
+            $word = 'Lord';
+            break;
+            case 'lady':
+            $word = 'lady';
+            break;
             default:
-            $word = false;
+            $word = null;
         }
 
         return $word;
@@ -175,7 +190,7 @@ class PersonalNameConverter
         $misinterpret = array('Ma', 'Pe', 'Ao'); // Possible Chinese surnames which look similar to prefixes
 
     if (array_search($word, $misinterpret, true) !== false) {
-        return false;
+        return null;
     }
 
 // these are some common suffixes - what am I missing?
@@ -187,7 +202,7 @@ class PersonalNameConverter
             }
         }
 
-        return false;
+        return null;
     }
 
 // detect compound last names like "Von Fange"

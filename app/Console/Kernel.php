@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \Adapta\Console\Commands\Inspire::class,
         \Adapta\Console\Commands\TestLoader::class,
+        \Adapta\Console\Commands\TestNormalizer::class,
     ];
 
     /**

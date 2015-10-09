@@ -65,4 +65,15 @@ abstract class AbstractFileLoader implements LoaderInterface
     {
         return @$this->options[$option];
     }
+
+    public function getData()
+    {
+        $data = [];
+
+        foreach ($this->reader as $row) {
+            $data[] = $row;
+        }
+
+        return $data;
+    }
 }

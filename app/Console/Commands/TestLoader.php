@@ -5,6 +5,7 @@ namespace Adapta\Console\Commands;
 use Illuminate\Console\Command;
 use Adapta\Components\Loaders\LoaderFactory;
 use Adapta\Components\Converters\PersonalNameConverter;
+use Config;
 
 class TestLoader extends Command {
     /**
@@ -39,8 +40,10 @@ class TestLoader extends Command {
     public function handle()
     {
 
-// $converter = new PersonalNameConverter();
-// $string = $converter->convert('Mr John Smith');
+$converter = new PersonalNameConverter();
+$string = $converter('Karl-Peter von Schmidt');
+
+dd($string);
 
 
         $loader = LoaderFactory::make($this->argument('loader'));
